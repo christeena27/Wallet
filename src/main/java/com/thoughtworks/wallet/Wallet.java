@@ -1,24 +1,20 @@
 package com.thoughtworks.wallet;
 
 public class Wallet {
-    private int previousBalance;
-    private int currentBalance;
+    private double currentBalance;
 
 
-    public Wallet(int balance) {
+    public Wallet(double balance) {
         this.currentBalance = balance;
-        this.previousBalance = 0;
 
     }
 
-    public void credit(int amount) {
-        previousBalance = currentBalance;
+    public void credit(double amount) {
         currentBalance += amount;
 
     }
 
-    public boolean isCredited(int creditedAmount) {
-        return currentBalance - previousBalance == creditedAmount;
-
+    public double balance() {
+        return currentBalance;
     }
 }
