@@ -13,4 +13,7 @@ public enum Currency {
         return value * conversionFactor;
     }
 
+    public double convertToPreferredCurrency(double currencyValue,Currency preferredCurrency) {
+        return currencyValue/preferredCurrency.conversionFactor;
+    }
 }

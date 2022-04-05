@@ -50,4 +50,9 @@ public class Money {
         return Objects.hash(value);
     }
 
+    public Money convertToPreferredCurrency(Currency preferredCurrency) throws NegativeValueAmountException{
+        double valueInPreferredCurrency=this.currency.convertToPreferredCurrency(this.value,preferredCurrency);
+        return new Money(valueInPreferredCurrency,preferredCurrency);
+    }
+
 }

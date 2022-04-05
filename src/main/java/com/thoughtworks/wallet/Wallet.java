@@ -16,6 +16,10 @@ public class Wallet {
 
     }
 
+    public Money totalMoney(Currency preferredCurrency) throws NegativeValueAmountException {
+        return balance.convertToPreferredCurrency(preferredCurrency);
+    }
+
     public Money balance() {
         return balance;
     }
