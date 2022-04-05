@@ -19,4 +19,8 @@ public class Wallet {
     public Money balance() {
         return balance;
     }
+
+    public void retrieve(Money money) throws NegativeValueAmountException{
+        this.balance=balance.take(money);
+    }
 }

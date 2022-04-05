@@ -32,4 +32,21 @@ public class WalletTest {
         assertEquals(wallet.balance(), seventySixRupees);
 
     }
+
+    @Test
+    void shouldRetrieveTenRupeesFromTheWallet() throws NegativeValueAmountException{
+        Money oneRupee = Money.createRupee(1);
+        Money oneDollar = Money.createDollar(1);
+        Money tenRupee = Money.createRupee(10);
+        Wallet wallet = new Wallet();
+
+        Money actual=Money.createRupee(66);
+
+        wallet.add(oneRupee);
+        wallet.add(oneDollar);
+        wallet.retrieve(tenRupee);
+
+        assertEquals(wallet.balance(), actual);
+
+    }
 }

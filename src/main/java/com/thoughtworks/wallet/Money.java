@@ -30,6 +30,12 @@ public class Money {
 
     }
 
+    public Money take(Money another) throws NegativeValueAmountException{
+        double anotherAmount = another.currency.convertToBase(another.value);
+
+        return new Money(this.value - anotherAmount, this.currency);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -43,4 +49,5 @@ public class Money {
     public int hashCode() {
         return Objects.hash(value);
     }
+
 }
