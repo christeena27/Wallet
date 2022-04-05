@@ -49,4 +49,18 @@ public class WalletTest {
         assertEquals(wallet.balance(), actual);
 
     }
+
+    @Test
+    void shouldDisplayTotalMoneyWhenPreferredCurrencyIsRupee() throws NegativeValueAmountException{
+        Money oneRupee = Money.createRupee(50);
+        Money oneDollar = Money.createDollar(1);
+        Money finalamount = Money.createRupee(124.85);
+        Wallet wallet = new Wallet();
+
+        wallet.add(oneRupee);
+        wallet.add(oneDollar);
+
+        assertEquals(wallet.balance(),finalamount);
+    }
+
 }

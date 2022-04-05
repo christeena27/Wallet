@@ -1,7 +1,7 @@
 package com.thoughtworks.wallet;
 
 public enum Currency {
-    RUPEE(1), DOLLAR(75);
+    RUPEE(1), DOLLAR(74.85);
 
     private final double conversionFactor;
 
